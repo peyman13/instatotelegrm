@@ -61,9 +61,8 @@ class InstagaramController extends Controller
         $request->session()->put('info', $resp);
 
         Session::save();
-        return redirect()->route('instagram/selfMedia');
 
-		// echo 'Your username is: ' . $data->user->username;
+        return redirect('instagram/selfMedia');
     }
 
     public function selfMedia(Request $request){
@@ -105,7 +104,6 @@ class InstagaramController extends Controller
         print_r($decode);
 
         dd($request->session()->get('token'));
-        // https://api.instagram.com/v1/users/self/media/recent/?access_token=ACCESS-TOKEN
     }    
 
     public function getLikeMedia(Request $request, $mediaid){
